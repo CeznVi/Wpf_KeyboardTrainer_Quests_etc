@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Клавиатурный_Тренажерь_Wpf</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ico.png" />
+    <None Remove="Ico_start.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="ico.png" />
+    <Resource Include="Ico_start.png" />
+  </ItemGroup>
+
+</Project>
