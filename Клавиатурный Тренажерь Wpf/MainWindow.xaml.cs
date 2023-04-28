@@ -153,12 +153,13 @@ namespace Клавиатурный_Тренажерь_Wpf
             }
 
 
-            Label_StatusInfo.Content = keyKode;
+            Label_StatusInfo.Content = keySymbol;
 
             
             foreach (Border oneButton in _buttons)
             {
-                if(((TextBlock)oneButton.Child).Text.ToUpper().Equals(keySymbol.ToUpper())) {
+                if(((TextBlock)oneButton.Child).Text.ToUpper().Equals(keySymbol.ToUpper())) 
+                {
 
                     Brush oldColor = oneButton.Background;
                     if(oldColor != Brushes.Black)
@@ -174,6 +175,30 @@ namespace Клавиатурный_Тренажерь_Wpf
                         ((TextBlock)oneButton.Child).Foreground = Brushes.Black;
                     }
                 }
+                else if (((TextBlock)oneButton.Child).Tag != null)
+                {
+                    if(((TextBlock)oneButton.Child).Tag.ToString().ToUpper().Equals(keySymbol.ToUpper()))
+                    {
+                        Brush oldColor = oneButton.Background;
+                        if (oldColor != Brushes.Black)
+                        {
+                            oneButton.Background = Brushes.Black;
+                            ((TextBlock)oneButton.Child).Foreground = Brushes.White;
+                            BlinkButtonBackgroundAsync(oldColor);
+                        }
+                        async Task BlinkButtonBackgroundAsync(Brush oldColor)
+                        {
+                            await Task.Delay(200);
+                            oneButton.Background = oldColor;
+                            ((TextBlock)oneButton.Child).Foreground = Brushes.Black;
+                        }
+                    }    
+                }
+
+                        
+
+
+
             }
         }
     }

@@ -128,7 +128,7 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">+</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Backspace</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="back">Backspace</TextBlock>
             </Border>
 
             <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="80" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
@@ -175,7 +175,7 @@
             </Border>
 
             <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Caps Lock</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="capital">Caps Lock</TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Right">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">A</TextBlock>
@@ -211,11 +211,11 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">"</TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Enter</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="return">Enter</TextBlock>
             </Border>
 
             <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="139" Height="50" Grid.ColumnSpan="3" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Shift</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="leftshift">Shift</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Center">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">Z</TextBlock>
@@ -248,31 +248,31 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">?</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="12" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="139" Height="50" Grid.ColumnSpan="3" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Shift</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="rightshift">Shift</TextBlock>
             </Border>
 
 
             <Border Grid.Row="4" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="80" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Ctrl</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="leftctrl">Ctrl</TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="1" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Win</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="lwin">Win</TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="3" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Alt</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="system">Alt</TextBlock>
             </Border>
 
             <Border Grid.Row="4" Grid.Column="4" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="7" Width="350" HorizontalAlignment="Center">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Win</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Space</TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="10" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Alt</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="system">Alt</TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="12" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Left">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Win</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="lwin">Win</TextBlock>
             </Border>
             <Border Grid.Row="4" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Height="50" Grid.ColumnSpan="2" Width="80" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Ctrl</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="rightctrl">Ctrl</TextBlock>
             </Border>
 
 
@@ -290,7 +290,7 @@
                 </ItemsPanelTemplate>
             </StatusBar.ItemsPanel>
             <StatusBarItem Grid.Column="0">
-                <Label FontFamily="Segoe Script" x:Name="Label_StatusInfo" FontWeight="Bold">Init App</Label>
+                <Label x:Name="Label_StatusInfo" FontWeight="Bold" FontFamily="Segoe UI Black">Init App</Label>
             </StatusBarItem>
             <StatusBarItem Grid.Column="2">
                 <Label FontFamily="Segoe Script" x:Name="Label_CurrentUser" FontWeight="Bold">Undefine User</Label>
