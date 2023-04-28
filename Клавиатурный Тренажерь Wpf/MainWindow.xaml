@@ -89,37 +89,37 @@
 
             </Grid.ColumnDefinitions>
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">~</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oem3">~</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">!</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d1">!</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">@</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d2">@</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Yellow" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">#</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d3">#</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="4" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">$</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d4">$</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="5" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF0097FF" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">%</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d5">%</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="6" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF0097FF" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">^</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d6">^</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="7" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FFB13FAD" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">&amp;</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d7">&amp;</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="8" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FFB13FAD" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">*</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d8">*</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="9" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">(</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d9">(</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="10" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Yellow" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">)</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d0">)</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="11" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">_</TextBlock>
