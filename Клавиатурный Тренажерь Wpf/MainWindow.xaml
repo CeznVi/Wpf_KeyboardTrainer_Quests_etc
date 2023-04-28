@@ -122,10 +122,10 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="d0">)</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="11" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">_</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemminus">-</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="12" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">+</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemplus">+</TextBlock>
             </Border>
             <Border Grid.Row="0" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="back">Backspace</TextBlock>
@@ -165,13 +165,13 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">P</TextBlock>
             </Border>
             <Border Grid.Row="1" Grid.Column="11" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">{</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemopenbrackets">{</TextBlock>
             </Border>
             <Border Grid.Row="1" Grid.Column="12" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">}</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oem6">}</TextBlock>
             </Border>
             <Border Grid.Row="1" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="80" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">|</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oem5">|</TextBlock>
             </Border>
 
             <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
@@ -205,10 +205,10 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">L</TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="10" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">:</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oem1">:</TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="11" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Right">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">"</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemquotes">"</TextBlock>
             </Border>
             <Border Grid.Row="2" Grid.Column="13" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="109" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Left">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="return">Enter</TextBlock>
@@ -239,13 +239,13 @@
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">M</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="9" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Red" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">&lt;</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemcomma">&lt;</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="10" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="Yellow" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">&gt;</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemperiod">&gt;</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="11" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF2EFF00" Margin="5" Width="50" Height="50" Grid.ColumnSpan="2" HorizontalAlignment="Center">
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26">?</TextBlock>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="26" Tag="oemquestion">?</TextBlock>
             </Border>
             <Border Grid.Row="3" Grid.Column="12" BorderBrush="Black" BorderThickness="3" CornerRadius="8" Background="#FF9C999C" Margin="5" Width="139" Height="50" Grid.ColumnSpan="3" HorizontalAlignment="Right">
                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Tag="rightshift">Shift</TextBlock>
