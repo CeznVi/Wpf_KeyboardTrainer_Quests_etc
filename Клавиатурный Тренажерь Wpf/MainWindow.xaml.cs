@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Клавиатурный_Тренажерь_Wpf.Entity;
 
 namespace Клавиатурный_Тренажерь_Wpf
 {
