@@ -60,7 +60,7 @@
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
             <RichTextBox Background="Aquamarine" IsReadOnly="True" x:Name="RichTextBox_Quest" Grid.Row="0" FontSize="16"></RichTextBox>
-            <RichTextBox Background="Aquamarine" IsReadOnly="True" x:Name="RichTextBox_Answer" Grid.Row="1"></RichTextBox>
+            <RichTextBox Background="Aquamarine" IsReadOnly="True" x:Name="RichTextBox_Answer" Grid.Row="1" FontSize="16"></RichTextBox>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="0" x:Name="Grid_Keyboard" Background="LightGray" Grid.ColumnSpan="5">
             <Grid.RowDefinitions>

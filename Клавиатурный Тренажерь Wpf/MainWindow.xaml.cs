@@ -25,9 +25,9 @@ namespace Клавиатурный_Тренажерь_Wpf
 
         private string[] _quests =
         {
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "-,<>=+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "-,<>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "-,<>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         };
         private string _currentQuestResult = "";
         private int _indexQuest = -1;
@@ -101,6 +101,8 @@ namespace Клавиатурный_Тренажерь_Wpf
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
+            int[] ignorKey = { 2, 3, 6, 8, 116, 117, 119, 118, 70, 156, 27 };
+
             if (!_taskTimer.IsEnabled) return;
 
             int keyKode = Convert.ToInt32(e.Key);
@@ -111,14 +113,14 @@ namespace Клавиатурный_Тренажерь_Wpf
                 keySymbol = keySymbol.ToLower();
             }
 
-            if(keySymbol.Length == 1 || keyKode == 2 || keyKode == 18)      //либо символ либо пробел либо backspace
+            if (keySymbol.Length == 1 || keyKode == 2 || keyKode == 18)      //либо символ либо пробел либо backspace
             {
 
                 var startPosition = RichTextBox_Quest.CaretPosition;
                 var endPosition = RichTextBox_Quest.CaretPosition.GetNextInsertionPosition(LogicalDirection.Forward);
 
                 _currentQuestResult = "";
-                if(Keyboard.IsKeyDown(Key.LeftShift) == true)
+                if (Keyboard.IsKeyDown(Key.LeftShift) == true)
                 {
                     keySymbol = keySymbol.ToUpper();
                 }
@@ -142,7 +144,8 @@ namespace Клавиатурный_Тренажерь_Wpf
 
                     _indexCurrentLetter++;
                     RichTextBox_Answer.AppendText(_currentQuestResult);
-                } else                             //если не угадал                     
+                }
+                else                             //если не угадал                     
                 {
                     var textRange = new TextRange(startPosition, endPosition);
                     textRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Red);
@@ -151,56 +154,160 @@ namespace Клавиатурный_Тренажерь_Wpf
                 }
                 _countTotal++;
             }
+            else if (keySymbol.Length > 1 && !ignorKey.Contains(keyKode))
+            {
+                var startPosition = RichTextBox_Quest.CaretPosition;
+                var endPosition = RichTextBox_Quest.CaretPosition.GetNextInsertionPosition(LogicalDirection.Forward);
+
+                _currentQuestResult = "";
+                _currentQuestResult += e.Key.ToString();
+
+                if (Keyboard.GetKeyStates(Key.LeftShift) == KeyStates.Down || Keyboard.GetKeyStates(Key.RightShift) == KeyStates.Down)
+                {
+                   if (_currentQuestResult.ToLower() == "oemcomma")
+                      _currentQuestResult = "<";
+                   else if (_currentQuestResult.ToLower() == "oemperiod")
+                        _currentQuestResult = ">";
+                   else if (_currentQuestResult.ToLower() == "oem3")
+                        _currentQuestResult = "~";
+                    else if (_currentQuestResult.ToLower() == "d1")
+                        _currentQuestResult = "!";
+                    else if (_currentQuestResult.ToLower() == "d2")
+                        _currentQuestResult = "@";
+                    else if (_currentQuestResult.ToLower() == "d3")
+                        _currentQuestResult = "#";
+                    else if (_currentQuestResult.ToLower() == "d4")
+                        _currentQuestResult = "$";
+                    else if (_currentQuestResult.ToLower() == "d5")
+                        _currentQuestResult = "%";
+                    else if (_currentQuestResult.ToLower() == "d6")
+                        _currentQuestResult = "^";
+                    else if (_currentQuestResult.ToLower() == "d7")
+                        _currentQuestResult = "&";
+                    else if (_currentQuestResult.ToLower() == "d8")
+                        _currentQuestResult = "*";
+                    else if (_currentQuestResult.ToLower() == "d9")
+                        _currentQuestResult = "(";
+                    else if (_currentQuestResult.ToLower() == "d0")
+                        _currentQuestResult = ")";
+                    else if (_currentQuestResult.ToLower() == "oemplus")
+                        _currentQuestResult = "+";
+                    else if (_currentQuestResult.ToLower() == "oemopenbrackets")
+                        _currentQuestResult = "{";
+                    else if (_currentQuestResult.ToLower() == "oem6")
+                        _currentQuestResult = "}";
+                    else if (_currentQuestResult.ToLower() == "oem5")
+                        _currentQuestResult = "|";
+                    else if (_currentQuestResult.ToLower() == "oem1")
+                        _currentQuestResult = ":";
+                    else if (_currentQuestResult.ToLower() == "oemquotes")
+                        _currentQuestResult = "\"";
+                }
+                else 
+                {
+                    if (_currentQuestResult.ToLower() == "oem3")
+                        _currentQuestResult = "`";
+                    else if (_currentQuestResult.ToLower() == "d1")
+                        _currentQuestResult = "1";
+                    else if (_currentQuestResult.ToLower() == "d2")
+                        _currentQuestResult = "2";
+                    else if (_currentQuestResult.ToLower() == "d3")
+                        _currentQuestResult = "3";
+                    else if (_currentQuestResult.ToLower() == "d4")
+                        _currentQuestResult = "4";
+                    else if (_currentQuestResult.ToLower() == "d5")
+                        _currentQuestResult = "5";
+                    else if (_currentQuestResult.ToLower() == "d6")
+                        _currentQuestResult = "6";
+                    else if (_currentQuestResult.ToLower() == "d7")
+                        _currentQuestResult = "7";
+                    else if (_currentQuestResult.ToLower() == "d8")
+                        _currentQuestResult = "8";
+                    else if (_currentQuestResult.ToLower() == "d9")
+                        _currentQuestResult = "9";
+                    else if (_currentQuestResult.ToLower() == "d0")
+                        _currentQuestResult = "0";
+                    else if (_currentQuestResult.ToLower() == "oemminus")
+                        _currentQuestResult = "-";
+                    else if (_currentQuestResult.ToLower() == "oemplus")
+                        _currentQuestResult = "=";
+                    else if (_currentQuestResult.ToLower() == "oemcomma")
+                        _currentQuestResult = ",";
+                    else if (_currentQuestResult.ToLower() == "oemperiod")
+                        _currentQuestResult = ".";
+                    else if (_currentQuestResult.ToLower() == "oemopenbrackets")
+                        _currentQuestResult = "[";
+                    else if (_currentQuestResult.ToLower() == "oem6")
+                        _currentQuestResult = "]";
+                    else if (_currentQuestResult.ToLower() == "oem5")
+                        _currentQuestResult = "\'";
+                    else if (_currentQuestResult.ToLower() == "oem1")
+                        _currentQuestResult = ";";
+                    else if (_currentQuestResult.ToLower() == "oemquotes")
+                        _currentQuestResult = "'";
+                } 
+
+                if (_currentQuestResult.Length > 0 && _quests[_indexQuest][_indexCurrentLetter] == _currentQuestResult[0]) //если пользователь угадал букву
+                {
+                    var textRange = new TextRange(startPosition, endPosition);
+                    textRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Green);
+                    RichTextBox_Quest.CaretPosition = endPosition;
+
+                    _indexCurrentLetter++;
+                    RichTextBox_Answer.AppendText(_currentQuestResult);
+                }
+                else                                                 
+                {
+                    var textRange = new TextRange(startPosition, endPosition);
+                    textRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Red);
+                    _countFails++;
+                    Label_ErrorInfo.Content = _countFails;
+                }
+                _countTotal++;
+            }
+            
 
 
             Label_StatusInfo.Content = keySymbol;
 
-            
+            ///перебор техкстбоксов и реализация подсветки 
             foreach (Border oneButton in _buttons)
             {
                 if(((TextBlock)oneButton.Child).Text.ToUpper().Equals(keySymbol.ToUpper())) 
                 {
-
-                    Brush oldColor = oneButton.Background;
-                    if(oldColor != Brushes.Black)
-                    {
-                        oneButton.Background = Brushes.Black;
-                        ((TextBlock)oneButton.Child).Foreground = Brushes.White;
-                        BlinkButtonBackgroundAsync(oldColor);
-                    }
-                    async Task BlinkButtonBackgroundAsync(Brush oldColor)
-                    {
-                        await Task.Delay(200);
-                        oneButton.Background = oldColor;
-                        ((TextBlock)oneButton.Child).Foreground = Brushes.Black;
-                    }
+                    IlluminateTheKey(oneButton);
                 }
                 else if (((TextBlock)oneButton.Child).Tag != null)
                 {
                     if(((TextBlock)oneButton.Child).Tag.ToString().ToUpper().Equals(keySymbol.ToUpper()))
                     {
-                        Brush oldColor = oneButton.Background;
-                        if (oldColor != Brushes.Black)
-                        {
-                            oneButton.Background = Brushes.Black;
-                            ((TextBlock)oneButton.Child).Foreground = Brushes.White;
-                            BlinkButtonBackgroundAsync(oldColor);
-                        }
-                        async Task BlinkButtonBackgroundAsync(Brush oldColor)
-                        {
-                            await Task.Delay(200);
-                            oneButton.Background = oldColor;
-                            ((TextBlock)oneButton.Child).Foreground = Brushes.Black;
-                        }
+                        IlluminateTheKey(oneButton);
                     }    
                 }
-
-                        
-
-
-
             }
         }
+
+        /// <summary>
+        /// Механизм подстветки клавиш
+        /// </summary>
+        /// <param name="oneButton">текстовый блок клавишы</param>
+        private void IlluminateTheKey(Border oneButton)
+        {
+            Brush oldColor = oneButton.Background;
+            if (oldColor != Brushes.Black)
+            {
+                oneButton.Background = Brushes.Black;
+                ((TextBlock)oneButton.Child).Foreground = Brushes.White;
+                BlinkButtonBackgroundAsync(oldColor);
+            }
+            async Task BlinkButtonBackgroundAsync(Brush oldColor)
+            {
+                await Task.Delay(200);
+                oneButton.Background = oldColor;
+                ((TextBlock)oneButton.Child).Foreground = Brushes.Black;
+            }
+        }
+
     }
 }
 
