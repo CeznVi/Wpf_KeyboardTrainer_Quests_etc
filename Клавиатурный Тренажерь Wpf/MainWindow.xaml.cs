@@ -50,7 +50,7 @@ namespace Клавиатурный_Тренажерь_Wpf
             _taskTimer.Interval = new TimeSpan(1000);
             _taskTimer.Tick += _taskTimer_Tick;
             _buttons = new List<Border>();
-
+            Button_StartGame.IsEnabled = false;
 
             foreach (var item in Grid_Keyboard.Children.OfType<Border>())
             {
@@ -67,13 +67,15 @@ namespace Клавиатурный_Тренажерь_Wpf
         {
             if (!_taskTimer.IsEnabled)          //если таймер не включен
             {
+                ComboBox_SelectDifficult.IsEnabled = false;
+
                 _taskTimer.Start();
                 _startTime = DateTime.Now;
                 Button_StartGame.IsEnabled = false;
                 Button_EndGame.IsEnabled = true;
+                
                 Random random = new Random();
                 _indexQuest = random.Next(0, _quests.Length);
-
 
                 _indexCurrentLetter = 0;
                 _countFails = 0;
@@ -84,7 +86,7 @@ namespace Клавиатурный_Тренажерь_Wpf
                 RichTextBox_Quest.Document.Blocks.Add(new Paragraph(new Run(_quests[_indexQuest])));
                 RichTextBox_Quest.CaretPosition = RichTextBox_Quest.CaretPosition.DocumentStart;
                 Label_ErrorInfo.Content = 0;
-
+                Label_SpeedInfo.Content = 0;
             }
         }
 
@@ -97,6 +99,7 @@ namespace Клавиатурный_Тренажерь_Wpf
                 _elapsedSpan = _startTime - _endTime;
                 Button_EndGame.IsEnabled = false;
                 Button_StartGame.IsEnabled = true;
+                ComboBox_SelectDifficult.IsEnabled = true;
             }
         }
 
@@ -309,6 +312,11 @@ namespace Клавиатурный_Тренажерь_Wpf
             }
         }
 
+        private void ComboBox_SelectDifficult_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Button_StartGame.IsEnabled = true;
+
+        }
     }
 }
 
