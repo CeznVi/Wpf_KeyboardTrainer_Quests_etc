@@ -300,10 +300,9 @@ namespace Клавиатурный_Тренажерь_Wpf
             _taskTimer.Stop();
             _endTime = DateTime.Now;
             _elapsedSpan = _startTime - _endTime;
-
             
-
-
+            Label_SpeedInfo.Content = (Math.Round(_quest.Length / _elapsedSpan.TotalMinutes) * -1).ToString();
+            //MessageBox.Show($"{}");
         }
 
         /// <summary>
