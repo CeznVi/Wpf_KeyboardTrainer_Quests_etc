@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfQuest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Quest>
+    <Text>abcdqqqqqrrrrrrczaaaaabbbcccddddddd</Text>
+    <Difficult>Easy</Difficult>
+  </Quest>
+  <Quest>
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
+    <Difficult>Medium</Difficult>
+  </Quest>
+  <Quest>
+    <Text>-,&lt;&gt;Lo34rem-,&lt;&gt; ipsum666 dolor#4 sit !amet, consectetur ad%$#ip}|iscing elit, sed do ei%#@%re e]t dolor.e }|magn|a a?l%iqua/</Text>
+    <Difficult>Hard</Difficult>
+  </Quest>
+</ArrayOfQuest>

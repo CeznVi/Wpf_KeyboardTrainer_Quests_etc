@@ -24,18 +24,15 @@ namespace Клавиатурный_Тренажерь_Wpf
     public partial class MainWindow : Window
     {
 
-        private string[] _quests =
-        {
-            "-,<>=+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "-,<>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-            "-,<>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        };
+        private string _quest = string.Empty;
         private string _currentQuestResult = "";
-        private int _indexQuest = -1;
         private int _indexCurrentLetter = 0;
         private int _countFails = 0;
         private int _countTotal = 0;
         private float _speed = 0.0f;
+
+        QuestController _controllerQuests;
+
 
         private DispatcherTimer _taskTimer;
         private DateTime _startTime;
@@ -46,6 +43,7 @@ namespace Клавиатурный_Тренажерь_Wpf
         public MainWindow()
         {
             InitializeComponent();
+            _controllerQuests = new QuestController();
             _taskTimer = new DispatcherTimer();
             _taskTimer.Interval = new TimeSpan(1000);
             _taskTimer.Tick += _taskTimer_Tick;
@@ -56,6 +54,14 @@ namespace Клавиатурный_Тренажерь_Wpf
             {
                 _buttons.Add(item);
             }
+                        
+            QuestRepository.LoadData(_controllerQuests);
+            ComboBox_SelectDifficult.ItemsSource = _controllerQuests.GetAllDifficults();
+
+           
+
+
+
         }
 
         private void _taskTimer_Tick(object sender, EventArgs e)
@@ -74,16 +80,13 @@ namespace Клавиатурный_Тренажерь_Wpf
                 Button_StartGame.IsEnabled = false;
                 Button_EndGame.IsEnabled = true;
                 
-                Random random = new Random();
-                _indexQuest = random.Next(0, _quests.Length);
-
                 _indexCurrentLetter = 0;
                 _countFails = 0;
                 _countTotal = 0;
                 _speed = 0.0f;
 
                 RichTextBox_Quest.Document.Blocks.Clear();
-                RichTextBox_Quest.Document.Blocks.Add(new Paragraph(new Run(_quests[_indexQuest])));
+                RichTextBox_Quest.Document.Blocks.Add(new Paragraph(new Run(_quest)));
                 RichTextBox_Quest.CaretPosition = RichTextBox_Quest.CaretPosition.DocumentStart;
                 Label_ErrorInfo.Content = 0;
                 Label_SpeedInfo.Content = 0;
@@ -108,6 +111,8 @@ namespace Клавиатурный_Тренажерь_Wpf
             int[] ignorKey = { 2, 3, 6, 8, 116, 117, 119, 118, 70, 156, 27 };
 
             if (!_taskTimer.IsEnabled) return;
+            if(_indexCurrentLetter == _quest.Length) return;  /* ---------------------------------  Вызвыть конец игры   */
+
 
             int keyKode = Convert.ToInt32(e.Key);
             string keySymbol = e.Key.ToString();
@@ -140,7 +145,7 @@ namespace Клавиатурный_Тренажерь_Wpf
                     _currentQuestResult = " ";
                 }
 
-                if (_currentQuestResult.Length > 0 && _quests[_indexQuest][_indexCurrentLetter] == _currentQuestResult[0]) //если пользователь угадал букву
+                if (_currentQuestResult.Length > 0 && _quest[_indexCurrentLetter] == _currentQuestResult[0]) //если пользователь угадал букву
                 {
                     var textRange = new TextRange(startPosition, endPosition);
                     textRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Green);
@@ -251,7 +256,7 @@ namespace Клавиатурный_Тренажерь_Wpf
                         _currentQuestResult = "'";
                 } 
 
-                if (_currentQuestResult.Length > 0 && _quests[_indexQuest][_indexCurrentLetter] == _currentQuestResult[0]) //если пользователь угадал букву
+                if (_currentQuestResult.Length > 0 && _quest[_indexCurrentLetter] == _currentQuestResult[0]) //если пользователь угадал букву
                 {
                     var textRange = new TextRange(startPosition, endPosition);
                     textRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.Green);
@@ -270,8 +275,6 @@ namespace Клавиатурный_Тренажерь_Wpf
                 _countTotal++;
             }
             
-
-
             Label_StatusInfo.Content = keySymbol;
 
             ///перебор техкстбоксов и реализация подсветки 
@@ -315,7 +318,7 @@ namespace Клавиатурный_Тренажерь_Wpf
         private void ComboBox_SelectDifficult_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Button_StartGame.IsEnabled = true;
-
+            _quest = _controllerQuests.GetQuestByDifficults(ComboBox_SelectDifficult.SelectedItem.ToString());
         }
     }
 }

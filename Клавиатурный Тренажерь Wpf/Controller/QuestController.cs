@@ -1,42 +1,55 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO.Packaging;
 using System.Text;
 
 namespace Клавиатурный_Тренажерь_Wpf.Entity
 {
-    class QuestRepository
+    public class QuestController
     {
+        /*   -------------------------- Переменные --------------------------   */
+
         /// <summary>
         /// Хранилище квестов
         /// </summary>
         private List<Quest> _quests;
 
+        /*   -------------------------- Конструкторы --------------------------   */
+
         /// <summary>
         /// Конструктор
         /// </summary>
-        public QuestRepository()
+        public QuestController()
         {
             _quests = new List<Quest>();
         }
 
-        ///-------------------------------------Методы---------------------
-        
-        //////////ДЕЙСТВИЯ С 1 квестом
+        /*   -------------------------- Свойства --------------------------   */
+        /// <summary>
+        /// Дает возможность получить доступ к списку квестов
+        /// </summary>
+        public List<Quest> Quests { get { return _quests; } }
 
-        //Добавить квест
+
+        /*   -------------------------- Методы --------------------------   */
+        
+        /// <summary>
+        /// Добавить квест
+        /// </summary>
+        /// <param name="q">квест</param>
         public void AddQuest(Quest q)
         {
             _quests.Add(q);
         }
+
         /// <summary>
         /// Удалить квест
         /// </summary>
-        /// <param name="q">Сущность квест</param>
-        public void RemoveQuest(Quest q) 
-        { 
+        /// <param name="q">Квест</param>
+        public void RemoveQuest(Quest q)
+        {
             _quests.Remove(q);
         }
+
         /// <summary>
         /// Возвращает список сложностей
         /// </summary>
@@ -47,29 +60,22 @@ namespace Клавиатурный_Тренажерь_Wpf.Entity
 
             foreach (Quest item in _quests)
             {
-                if(!diff.Equals(item.Difficult))
+                if (!diff.Equals(item.Difficult))
                     diff.Add(item.Difficult);
             }
 
-            return diff; 
+            return diff;
         }
+
         /// <summary>
         /// Возвращает 1 квест по сложности
         /// </summary>
         /// <param name="difficults"></param>
         /// <returns></returns>
-        public Quest GetQuestByDifficults(string difficults)
+        public string GetQuestByDifficults(string difficults)
         {
-            return _quests.Find(q => q.Difficult.Equals(difficults));
+            return _quests.Find(q => q.Difficult.Equals(difficults)).Text;
         }
-
-        //////////ДЕЙСТВИЯ загрузка/сохранение квестов
-        
-
-
-
-        ///-------------------------------------Свойства---------------------
-        public List<Quest> Quests { get { return _quests; } }
 
 
     }
