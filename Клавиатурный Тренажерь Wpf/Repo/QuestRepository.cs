@@ -11,7 +11,7 @@ namespace Клавиатурный_Тренажерь_Wpf.Entity
 {
     class QuestRepository
     {
-        public static void SaveData(QuestController controller, string dirPath = "../../../../SaveFile", string fileName = $"/QuestRepo.xml")
+        public static void SaveData(QuestController controller, string fileName = $"/QuestRepo.xml", string dirPath = "../../../../SaveFile")
         {
             try
             {
@@ -34,7 +34,7 @@ namespace Клавиатурный_Тренажерь_Wpf.Entity
             }
         }
 
-        public static void LoadData(QuestController controller, string dirPath = "../../../../SaveFile", string fileName = $"/QuestRepo.xml")
+        public static void LoadData(QuestController controller, string fileName = $"/QuestRepo.xml", string dirPath = "../../../../SaveFile")
         {
             try
             {

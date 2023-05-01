@@ -43,6 +43,7 @@ namespace Клавиатурный_Тренажерь_Wpf
         public MainWindow()
         {
             InitializeComponent();
+
             _controllerQuests = new QuestController();
             _taskTimer = new DispatcherTimer();
             _taskTimer.Interval = new TimeSpan(1000);
@@ -57,10 +58,6 @@ namespace Клавиатурный_Тренажерь_Wpf
                         
             QuestRepository.LoadData(_controllerQuests);
             ComboBox_SelectDifficult.ItemsSource = _controllerQuests.GetAllDifficults();
-
-           
-
-
 
         }
 
@@ -111,7 +108,7 @@ namespace Клавиатурный_Тренажерь_Wpf
             int[] ignorKey = { 2, 3, 6, 8, 116, 117, 119, 118, 70, 156, 27 };
 
             if (!_taskTimer.IsEnabled) return;
-            if(_indexCurrentLetter == _quest.Length) return;  /* ---------------------------------  Вызвыть конец игры   */
+            if(_indexCurrentLetter == _quest.Length - 1) EndGame();  /* ---------------------------------  Вызывает конец игры   */
 
 
             int keyKode = Convert.ToInt32(e.Key);
@@ -292,6 +289,21 @@ namespace Клавиатурный_Тренажерь_Wpf
                     }    
                 }
             }
+        }
+
+        private void EndGame()
+        {
+            Button_StartGame.IsEnabled = true;
+            Button_EndGame.IsEnabled = false;
+            ComboBox_SelectDifficult.IsEnabled = true;
+
+            _taskTimer.Stop();
+            _endTime = DateTime.Now;
+            _elapsedSpan = _startTime - _endTime;
+
+            
+
+
         }
 
         /// <summary>

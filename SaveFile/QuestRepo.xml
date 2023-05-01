@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfQuest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Quest>
+    <Text>abcd</Text>
+    <Difficult>Dummy</Difficult>
+  </Quest>
+  <Quest>
     <Text>abcdqqqqqrrrrrrczaaaaabbbcccddddddd</Text>
     <Difficult>Easy</Difficult>
   </Quest>
