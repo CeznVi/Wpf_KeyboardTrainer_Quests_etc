@@ -1,0 +1,54 @@
+﻿<Window x:Class="Клавиатурный_Тренажерь_Wpf.MyWindows.GameResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Клавиатурный_Тренажерь_Wpf.MyWindows"
+        mc:Ignorable="d"
+        Title="Result" Height="300" Width="300" ResizeMode="NoResize" Icon="/ico.png">
+    <Grid Background="LightGray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="1" 
+                   FontFamily="Segoe Script" FontSize="16" 
+                   x:Name="LabelGameResult_Title" 
+                   HorizontalAlignment="Center">Game Result
+            </Label>
+            <WrapPanel Grid.Row="1" Grid.Column="1">
+                <Label FontFamily="Segoe Script" FontSize="16" x:Name="LabelGameResult_lvl" >Lvl: </Label>
+                <Label FontFamily="Segoe Script" x:Name="LabelGameResult_lvlText" FontSize="16" Foreground="Red">--</Label>
+            </WrapPanel>
+            <WrapPanel Grid.Row="2" Grid.Column="1">
+                <Label FontFamily="Segoe Script" FontSize="16" x:Name="LabelGameResult_Fails" >Fails:</Label>
+                <Label FontFamily="Segoe Script" x:Name="LabelGameResult_FailsText" FontSize="16" Foreground="Red">--</Label>
+            </WrapPanel>
+        <WrapPanel Grid.Row="3" Grid.Column="1">
+            <Label FontFamily="Segoe Script" FontSize="16" x:Name="LabelGameResult_Speed" >Speed:</Label>
+            <Label FontFamily="Segoe Script" x:Name="LabelGameResult_SpeedText" FontSize="16" Foreground="Red">--</Label>
+        </WrapPanel>
+        <WrapPanel Grid.Row="4" Grid.Column="1">
+            <Label FontFamily="Segoe Script" FontSize="16" x:Name="LabelGameResult_GameDuration" >GameDuration:</Label>
+            <Label FontFamily="Segoe Script" x:Name="LabelGameResult_GameDurationText" FontSize="16" Foreground="Red">--</Label>
+        </WrapPanel>
+
+        <Button Grid.Row="5" Grid.Column="1" x:Name="Button_Ok" 
+                    Height="32" Width="60" Margin="3"
+                    FontFamily="Segoe Script" FontSize="16" Content="OK" 
+                    Background="#FFEFE696" UseLayoutRounding="True"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Click="Button_Ok_Click"
+            />
+
+    </Grid>
+</Window>
