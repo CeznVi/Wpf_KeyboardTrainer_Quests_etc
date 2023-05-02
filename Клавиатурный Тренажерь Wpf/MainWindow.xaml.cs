@@ -66,6 +66,11 @@ namespace Клавиатурный_Тренажерь_Wpf
 
         }
 
+        /// <summary>
+        /// Старт игры 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_StartGame_Click(object sender, RoutedEventArgs e)
         {
             if (!_taskTimer.IsEnabled)          //если таймер не включен
@@ -83,6 +88,8 @@ namespace Клавиатурный_Тренажерь_Wpf
                 _speed = 0.0f;
 
                 RichTextBox_Quest.Document.Blocks.Clear();
+                RichTextBox_Answer.Document.Blocks.Clear();
+
                 RichTextBox_Quest.Document.Blocks.Add(new Paragraph(new Run(_quest)));
                 RichTextBox_Quest.CaretPosition = RichTextBox_Quest.CaretPosition.DocumentStart;
                 Label_ErrorInfo.Content = 0;
@@ -108,8 +115,6 @@ namespace Клавиатурный_Тренажерь_Wpf
             int[] ignorKey = { 2, 3, 6, 8, 116, 117, 119, 118, 70, 156, 27 };
 
             if (!_taskTimer.IsEnabled) return;
-            if(_indexCurrentLetter == _quest.Length - 1) EndGame();  /* ---------------------------------  Вызывает конец игры   */
-
 
             int keyKode = Convert.ToInt32(e.Key);
             string keySymbol = e.Key.ToString();
@@ -150,6 +155,7 @@ namespace Клавиатурный_Тренажерь_Wpf
 
                     _indexCurrentLetter++;
                     RichTextBox_Answer.AppendText(_currentQuestResult);
+                    
                 }
                 else                             //если не угадал                     
                 {
@@ -261,6 +267,7 @@ namespace Клавиатурный_Тренажерь_Wpf
 
                     _indexCurrentLetter++;
                     RichTextBox_Answer.AppendText(_currentQuestResult);
+
                 }
                 else                                                 
                 {
@@ -271,8 +278,14 @@ namespace Клавиатурный_Тренажерь_Wpf
                 }
                 _countTotal++;
             }
-            
-            Label_StatusInfo.Content = keySymbol;
+
+            if (_indexCurrentLetter == _quest.Length)   /* ---------------------------------  Вызывает конец игры   */
+            {
+                EndGame();
+                return;
+            }
+
+            Label_StatusInfo.Content = $"Time elapsed = {(DateTime.Now - _startTime).Seconds} sec.";
 
             ///перебор техкстбоксов и реализация подсветки 
             foreach (Border oneButton in _buttons)
@@ -289,10 +302,13 @@ namespace Клавиатурный_Тренажерь_Wpf
                     }    
                 }
             }
+
+
         }
 
         private void EndGame()
         {
+            Label_StatusInfo.Content = "Game over";
             Button_StartGame.IsEnabled = true;
             Button_EndGame.IsEnabled = false;
             ComboBox_SelectDifficult.IsEnabled = true;
@@ -302,7 +318,7 @@ namespace Клавиатурный_Тренажерь_Wpf
             _elapsedSpan = _startTime - _endTime;
             
             Label_SpeedInfo.Content = (Math.Round(_quest.Length / _elapsedSpan.TotalMinutes) * -1).ToString();
-            //MessageBox.Show($"{}");
+            
         }
 
         /// <summary>
